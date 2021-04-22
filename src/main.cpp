@@ -13,8 +13,11 @@ using namespace Color;
 using namespace StringUtils;
 
 int main(int argc, char** argv) {
+  cout << tcolor("Welcome to autocomplete. Please await while the data is validated", BLUE) << endl
+       << endl;
+
   if (argc < 2) {
-    cout << tcolor("Missing database filename", RED);
+    cout << tcolor("Missing database filename", RED) << endl;
     return 1;
   }
 
@@ -25,6 +28,7 @@ int main(int argc, char** argv) {
     return 1;
   }
 
+  cout << tcolor("Reading database file. Please wait", BLUE) << endl;
   Database database;
   Term* term;
 
@@ -48,6 +52,8 @@ int main(int argc, char** argv) {
     database.add_term(term);
   }
   database_file.close();
+  cout << tcolor("Database file succesfully read!", GREEN) << endl
+       << endl;
 
   cout << ">>> Type a word and hit ENTER or <ctrl>+d to quit: ";
   string query;
@@ -57,6 +63,8 @@ int main(int argc, char** argv) {
     for (size_t i = 0; i < terms.size(); i++)
       cout << terms[i]->value << endl;
 
+    cout << endl
+         << endl;
     cout << ">>> Type a word and hit ENTER or <ctrl>+d to quit: ";
   }
 
