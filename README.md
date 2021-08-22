@@ -1,6 +1,6 @@
 # Autocomplete
 
-A C++ implementation of a dna profiler program
+A C++ implementation of a text autocomplete program
 
 ### Table of Contents
 
